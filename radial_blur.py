@@ -34,7 +34,7 @@ def radial_blur(src, pos, ratio, iterations, margin):
     m = margin
 
     # 背景を作成する．
-    bg = np.ones(src.shape, dtype=np.uint8) * 0
+    bg = np.ones(src.shape, dtype=np.uint8) * 255
     bg = cv2.resize(bg, (int(m * w), int(m * h)))
 
     # 背景の中心に元画像を配置
@@ -69,7 +69,7 @@ def nothing(x):
 
 
 def main():
-    src = cv2.imread("C:/Users/Miyamoto Junpei/Downloads/pokemon_denoised.png", cv2.IMREAD_COLOR)
+    src = cv2.imread("C:/Users/Miyamoto Junpei/PycharmProjects/VisualGuidance/src/photo/im20180521174454.png", cv2.IMREAD_COLOR)
     dst = src
     win_name = "Radial Blur"
     cv2.namedWindow(win_name, cv2.WINDOW_KEEPRATIO)
